@@ -3,7 +3,7 @@ MAINTAINER kayasmith106
 
 ENV SOURCES .GoglandProjects/github.com/kayasmith106/simple-go-microservices/
 
-COPY .${SOURCES}
+COPY . ${SOURCES}
 
 RUN cd ${SOURCES} && CGO_ENABLED=0 go install
 
