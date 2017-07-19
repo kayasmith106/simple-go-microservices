@@ -1,0 +1,14 @@
+FROM golang:1.8-onbuild
+MAINTAINER kayasmith106
+
+ENV SOURCES .GoglandProjects/github.com/kayasmith106/simple-go-microservices/
+
+COPY .${SOURCES}
+
+RUN cd ${SOURCES} && CGO_ENABLED=0 go install
+
+ENV PORT 8080
+EXPOSE 8080
+
+ENTRYPOINT simple-go-microservices
+
